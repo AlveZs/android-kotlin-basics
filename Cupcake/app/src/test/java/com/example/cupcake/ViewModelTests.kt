@@ -6,7 +6,6 @@ import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
 import java.text.NumberFormat
-import java.util.*
 
 class ViewModelTests {
     @get:Rule
