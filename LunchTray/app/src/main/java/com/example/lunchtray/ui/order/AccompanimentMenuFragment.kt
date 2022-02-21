@@ -36,9 +36,11 @@ class AccompanimentMenuFragment : Fragment() {
     // This property is non-null between the onCreateView() and onDestroyView() lifecycle callbacks,
     // when the view hierarchy is attached to the fragment.
     private var _binding: FragmentAccompanimentMenuBinding? = null
+
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
     // Use the 'by activityViewModels()' Kotlin property delegate from the fragment-ktx artifact
     private val sharedViewModel: OrderViewModel by activityViewModels()
 
@@ -60,7 +62,6 @@ class AccompanimentMenuFragment : Fragment() {
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
             viewModel = sharedViewModel
-            // TODO: initialize the AccompanimentMenuFragment variables
             accompanimentMenuFragment = this@AccompanimentMenuFragment
         }
     }
@@ -69,7 +70,6 @@ class AccompanimentMenuFragment : Fragment() {
      * Navigate to the checkout fragment.
      */
     fun goToNextScreen() {
-        // TODO: Navigate to the CheckoutFragment
         findNavController().navigate(R.id.action_accompanimentMenuFragment_to_checkoutFragment)
     }
 
@@ -77,9 +77,7 @@ class AccompanimentMenuFragment : Fragment() {
      * Cancel the order and start over.
      */
     fun cancelOrder() {
-        // TODO: Reset order in view model
         sharedViewModel.resetOrder()
-        // TODO: Navigate back to the [StartFragment] to start over
         findNavController().navigate(R.id.action_accompanimentMenuFragment_to_startOrderFragment)
     }
 
