@@ -42,6 +42,10 @@ android {
         dataBinding true
     }
 
+    sourceSets {
+        test.resources.srcDirs += 'src/test/res'
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -71,4 +75,9 @@ dependencies {
 
     // Coil
     implementation "io.coil-kt:coil:1.1.1"
+
+    // Test dependencies
+    testImplementation 'junit:junit:4.12'
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+    testImplementation "com.squareup.okhttp3:mockwebserver:4.9.1"
 }
